@@ -505,10 +505,9 @@ class core_renderer extends \core_renderer {
         $showfrontpagemenu = false;
         $showusermenu = false;
 
-        // We are on the course home page.
-        if (($context->contextlevel == CONTEXT_COURSE) &&
-                !empty($currentnode) &&
-                ($currentnode->type == navigation_node::TYPE_COURSE || $currentnode->type == navigation_node::TYPE_SECTION)) {
+        // Render the course menu within the course context, the module context and the block context.
+        if (($context->contextlevel == CONTEXT_COURSE || $context->contextlevel == CONTEXT_MODULE
+                 || $context->contextlevel == CONTEXT_BLOCK) && !empty($currentnode)) {
             $showcoursemenu = true;
         }
 
