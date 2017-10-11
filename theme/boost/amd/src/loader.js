@@ -38,7 +38,8 @@ define(['jquery', './tether', 'core/event'], function(jQuery, Tether, Event) {
             'theme_boost/scrollspy',
             'theme_boost/tab',
             'theme_boost/tooltip',
-            'theme_boost/popover'],
+            'theme_boost/popover',
+            'theme_boost/focus_keyboard_only'],
             function() {
 
         // We do twice because: https://github.com/twbs/bootstrap/issues/10547
