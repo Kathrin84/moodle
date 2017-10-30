@@ -21,7 +21,15 @@
   margin-bottom: -$list-group-border-width;
   background-color: $list-group-bg;
   border: $list-group-border-width solid $list-group-border-color;
+  color: $list-group-link-hover-color;
 
+  // Hover state
+  @include hover-focus {
+    background-color: $list-group-hover-bg;
+  }
+}
+
+.list-group-item-action {
   &:first-child {
     @include border-top-radius($list-group-border-radius);
   }
@@ -66,34 +74,20 @@
       }
     }
   }
-}
-
-.list-group-flush {
-  .list-group-item {
-    border-radius: 0;
-  }
-}
-
-
-// Interactive list items
-//
-// Use anchor or button elements instead of `li`s or `div`s to create interactive
-// list items. Includes an extra `.active` modifier class for selected items.
-
-.list-group-item-action {
-  width: 100%; // For `<button>`s (anchors become 100% by default though)
-  color: $list-group-link-color;
-  text-align: inherit; // For `<button>`s (anchors inherit)
-
-  .list-group-item-heading {
-    color: $list-group-link-heading-color;
-  }
 
   // Hover state
   @include hover-focus {
-    color: $list-group-link-hover-color;
     text-decoration: none;
-    background-color: $list-group-hover-bg;
+  }
+
+  .list-group-flush {
+    .list-group-item {
+      border-radius: 0;
+    }
+
+  .list-group-item-heading {
+      color: $list-group-link-heading-color;
+    }
   }
 }
 
