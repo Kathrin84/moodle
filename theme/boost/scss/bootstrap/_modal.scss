@@ -32,6 +32,13 @@
   }
 }
 
+// Special style for help displayed with a modal dialog.
+.modal-dialog.help-modal {
+  top: 30%;
+  margin: 0 2rem;
+  max-width: initial;
+}
+
 // Shell div to position the modal with bottom padding
 .modal-dialog {
   position: relative;
