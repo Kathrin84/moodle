@@ -402,6 +402,10 @@ class core_renderer extends \core_renderer {
      */
     protected function render_help_icon(help_icon $helpicon) {
         $context = $helpicon->export_for_template($this);
+        // ID needed for modal dialog.
+        $context->linkid = $helpicon->identifier;
+        // Fill body variable needed for modal mustache with text value.
+        $context->body = $context->text;
         return $this->render_from_template('core/help_icon', $context);
     }
 
