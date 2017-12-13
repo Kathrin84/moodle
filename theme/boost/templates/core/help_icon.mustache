@@ -18,8 +18,10 @@
     }
 }}
 <a class="btn btn-link p-a-0" role="button"
-    data-container="body" data-toggle="popover"
-    data-placement="{{#ltr}}right{{/ltr}}{{^ltr}}left{{/ltr}}" data-content="{{text}} {{completedoclink}}"
-    data-html="true" tabindex="0" data-trigger="focus">
+    data-toggle="modal" data-target="#{{uniqid}}-modal"
+    data-placement="{{#ltr}}right{{/ltr}}{{^ltr}}left{{/ltr}}" tabindex="0" data-trigger="focus">
   {{#pix}}help, core, {{alt}}{{/pix}}
 </a>
+
+{{! Require modal dialogue}}
+{{> core/modal_cancel}}

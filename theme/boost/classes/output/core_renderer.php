@@ -417,6 +417,13 @@ class core_renderer extends \core_renderer {
      */
     protected function render_help_icon(help_icon $helpicon) {
         $context = $helpicon->export_for_template($this);
+        if (!empty($context->completedoclink)) {
+            $doclink = $context->completedoclink;
+            $context->body = $context->text . $doclink;
+        } else {
+            $context->body = $context->text;
+        }
+        $context->title = $context->heading;
         return $this->render_from_template('core/help_icon', $context);
     }
 
