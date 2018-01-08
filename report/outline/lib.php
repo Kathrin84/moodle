@@ -86,7 +86,12 @@ function report_outline_can_access_user_report($user, $course) {
         return false;
     }
 
-    if (has_capability('report/outline:view', $coursecontext)) {
+    /* KIZ MODIFICATION START
+       REASON: We need to hide this report from teachers who do not own the capability to view logs and a new capability
+               for this will be introduced in Moodle 3.5.
+               Original: has_capability('report/outline:view', $coursecontext) */
+    if (has_capability('report/log:view', $coursecontext)) {
+        /* KIZ MODIFICATION END */
         return true;
     }
 
