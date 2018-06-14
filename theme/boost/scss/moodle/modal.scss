@@ -1,5 +1,6 @@
 .modal {
     .modal-body {
+        white-space: normal !important; /* stylelint-disable declaration-no-important */
         & > .loading-icon {
             display: block;
             position: relative;
@@ -14,8 +15,5 @@
                 transform: translate(-50%, -50%);
             }
         }
-    }
-    .modal-body.text-wrap {
-        white-space: normal !important;
     }
 }

@@ -40,7 +40,7 @@
     }
 }}
 
-<div class="modal moodle-has-zindex" data-region="modal-container" aria-hidden="true" role="dialog">
+<div class="modal moodle-has-zindex" {{#linkid}}id="{{linkid}}"{{/linkid}} data-region="modal-container" aria-hidden="true" role="dialog">
     <div class="modal-dialog {{$classes}}{{/classes}}" role="document" data-region="modal" aria-labelledby="{{uniqid}}-modal-title" tabindex="0">
         <div class="modal-content">
             <div class="modal-header {{$headerclasses}}{{headerclasses}}{{/headerclasses}}" data-region="header">
@@ -48,7 +48,7 @@
                 {{$header}}
                     <h5 id="{{uniqid}}-modal-title" class="modal-title" data-region="title">{{$title}}{{title}}{{/title}}</h5>
                 {{/header}}
-                <button type="button" class="close" data-action="hide" aria-label={{#quote}}{{#str}}closebuttontitle{{/str}}{{/quote}}>
+                <button type="button" class="close" data-action="hide" data-dismiss="modal" aria-label={{#quote}}{{#str}}closebuttontitle{{/str}}{{/quote}}>
                   <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -58,6 +58,7 @@
                 {{/body}}
             </div>
             <div class="modal-footer" data-region="footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 {{$footer}}
                     {{{footer}}}
                 {{/footer}}
