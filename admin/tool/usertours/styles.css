@@ -66,3 +66,10 @@ span[data-flexitour="container"].orphan div[data-role="arrow"] {
     display: block;
     padding: 1em;
 }
+
+/* Hiding the reset user tour link on the assignment grading page because
+ * the pattern mod/%/view.php matches there, too.
+ * Pay attention that this is a hacky solution. */
+body.path-mod-assign.pagelayout-embedded .usertour {
+    display: none;
+}
